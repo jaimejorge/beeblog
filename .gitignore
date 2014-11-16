@@ -4,6 +4,7 @@
 *.so
 beeblog
 lastupdate.tmp
+conf/local.conf
 
 # Folders
 _obj

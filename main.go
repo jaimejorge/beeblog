@@ -1,6 +1,7 @@
 package main
 
 import (
+  "fmt"
 	_ "beeblog/docs"
 	_ "beeblog/routers"
 
@@ -10,7 +11,14 @@ import (
 )
 
 func init() {
-	orm.RegisterDataBase("default", "mysql", "root:@tcp(127.0.0.1:3306)/beeblog")
+  user := beego.AppConfig.String("DB::DB_USER")
+  password := beego.AppConfig.String("DB::DB_PASSWORD")
+  host := beego.AppConfig.String("DB::DB_HOST")
+  port := beego.AppConfig.String("DB::DB_PROT")
+  db := beego.AppConfig.String("DB::DB_DATABASE")
+  dataSource := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", user, password, host, port, db)
+
+	orm.RegisterDataBase("default", "mysql", dataSource)
 }
 
 func main() {
