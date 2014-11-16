@@ -5,6 +5,7 @@
 beeblog
 lastupdate.tmp
 conf/local.conf
+swagger/swagger-1/index.html
 
 # Folders
 _obj
