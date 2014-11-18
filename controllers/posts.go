@@ -68,7 +68,7 @@ func (this *PostsController) GetOne() {
 // @Param	offset	query	string	false	"Start position of result set. Must be an integer"
 // @Success 200 {object} models.Posts
 // @Failure 403
-// @router / [get]
+// @router / [get,options]
 func (this *PostsController) GetAll() {
 	var fields []string
 	var sortby []string

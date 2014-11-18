@@ -41,6 +41,13 @@ func init() {
 			[]string{"delete"},
 			nil})
 
+	beego.GlobalControllerRouter["beeblog/controllers:JwtController"] = append(beego.GlobalControllerRouter["beeblog/controllers:JwtController"],
+		beego.ControllerComments{
+			"IssueToken",
+			`/issue-token`,
+			[]string{"get"},
+			nil})
+
 	beego.GlobalControllerRouter["beeblog/controllers:PostsController"] = append(beego.GlobalControllerRouter["beeblog/controllers:PostsController"],
 		beego.ControllerComments{
 			"Post",
@@ -59,7 +66,7 @@ func init() {
 		beego.ControllerComments{
 			"GetAll",
 			`/`,
-			[]string{"get"},
+			[]string{"get","options"},
 			nil})
 
 	beego.GlobalControllerRouter["beeblog/controllers:PostsController"] = append(beego.GlobalControllerRouter["beeblog/controllers:PostsController"],

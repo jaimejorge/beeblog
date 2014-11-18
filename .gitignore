@@ -6,6 +6,8 @@ beeblog
 lastupdate.tmp
 conf/local.conf
 swagger/swagger-1/index.html
+.idea
+*.rsa
 
 # Folders
 _obj
